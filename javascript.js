@@ -13,3 +13,6 @@ function getComputerChoice() {
   }
 }
 
+function getHumanChoice() {
+  return window.prompt("Enter your choice [rock, paper, scissors]: ");
+}
