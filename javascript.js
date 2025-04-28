@@ -16,3 +16,56 @@ function getComputerChoice() {
 function getHumanChoice() {
   return window.prompt("Enter your choice [rock, paper, scissors]: ");
 }
+
+let humanScore = 0;
+let computerScore = 0;
+
+let computerChoice = getComputerChoice();
+let humanChoice = getHumanChoice().toLowerCase();
+
+function playRound(computerChoice, humanChoice) {
+  console.log(`You chose... ${humanChoice}`);
+  console.log(`Computer chose... ${computerChoice}`);
+
+  if (computerChoice === "rock") {
+    if (humanChoice === "paper") {
+      console.log("You win! Paper covers rock!");
+      humanScore++;
+    }
+    else if (humanChoice === "scissors") {
+      console.log("You lose! Rock smashes scissors!");
+      computerScore++;
+    }
+    else {
+      console.log("Tie! Go another round!");
+    }
+  }
+  else if (computerChoice === "paper") {
+    if (humanChoice === "rock") {
+      console.log("You lose! Paper covers rock!");
+      computerScore++;
+    } 
+    else if (humanChoice === "scissors") {
+      console.log("You win! Scissors cuts paper!");
+      humanScore++;
+    }
+    else {
+      console.log("Tie! Go another round!");
+    }
+  }
+  else if (computerChoice === "scissors") {
+    if (humanChoice === "rock") {
+      console.log("You win! Rock smashes scissors!");
+      humanScore++;
+    }
+    else if (humanChoice === "paper") {
+      console.log("You lose! Scissors cuts paper!");
+      computerScore++;
+    }
+    else {
+      console.log("Tie! Go another round!");
+    }
+  }
+}
+
+playRound(computerChoice, humanChoice);
